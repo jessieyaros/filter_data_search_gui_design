@@ -1,0 +1,75 @@
+
+ /* Create style to make table vertically scrollable. Needs work. 
+ Scrollbar is hidden until horizontal scroll is at the end */
+ table {
+  border-collapse: collapse;
+  overflow-x: scroll;
+}
+thead {
+  background-color: #EFEFEF;
+}
+thead,
+tbody {
+  display: block;
+}
+tbody {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100vh;
+}
+td,
+th {
+  min-width: 100px;
+  height: 25px;
+  /*border: dashed 1px lightblue;*/
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100px;
+}
+.container {
+  width: 100%;
+}
+
+/* use this is any class that I want to have a scroll bar*/
+/* html syntax should be like '<div class="accordion-body scroll">'*/
+.scroll {
+    max-height: 100px;
+    overflow-y: auto;
+}
+
+/* webkit scrollbar dictates the look of the scrollbar. 
+At least so far, it seems to work in chrome and edge.
+Its possible not all browsers support it. 
+This design provides a nice minimialist look designed by 
+adamblank/webkit.scrollbar.css */
+
+::-webkit-scrollbar{
+  width: 10px;
+}
+
+::-webkit-scrollbar-track-piece{
+  background-color: #FFF;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: #CBCBCB;
+  outline: 2px solid #FFF;
+  outline-offset: -2px;
+  border: .1px solid #B7B7B7;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background-color: #909090;
+}
+
+
+/* Style the search box inside the navigation bar */
+
+.accordion-body input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 12px;
+}

@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+	<head>
+    	<!-- Required meta tags to access Bootstrap -->
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+   		 <!-- This is the Bootstrap CSS style sheet. Must be placed before all other stylesheets -->
+    	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+      <!-- This is a css style shet I created to allow table to be scrolled vertically in addition to horizontally -->
+      <link rel="stylesheet" href="evolving.css"> 
+
+
+    	<!-- <title> is the string on the browser tab-->
+   		<title>CER DB</title>
+  	</head>
+
+  	<!-- <body> contains everything you actually see on the webpage-->
+  	<body>
+
+
+      <!-- Create container for top of webpage to describe webpages purpose. Jumbotron makes it look big and pretty. It uses utility classes for typography and spacing to space content out within the larger container.-->
+      <div class="jumbotron">
+        <div class="container">
+            <!-- display and lead classes are used to make headers and paragrapsh (respectively) stand out by makking font larger and thinner. It is more asthetically pleasing than the defualt. -->
+            <h1 class="display-4">CER Datbase</h1>
+            <p class="lead">Filter and export records across CERs.</p>
+            <!-- <hr> tag stands for horizontal rule. Creates a line to break up the page. -->
+            <hr class="my-4">
+          </div>
+      </div>      
+
+		<!-- Create two containers of unequal width. The first will contain search functionality. The second will contain the table -->
+    <!--Bootstrap accomodates 12 colums per row. Integers in columns can be adjusted to sum to to 12 units. ie col-sm-4 and col-sm-8. -->
+      <div class="container">
+
+        <div class="row">
+          <!-- 1/3 of page in this row is dedicated to the search fynctionality-->
+          <div class="col-sm-3">
+
+            <!-- Nest search categories within accordian/collapsible buttons to look pretty. There is an accordian item for each search category-->
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+              <!-- Country -->
+              <div class="accordion-item" >
+                <h2 class="accordion-header" id="flush-headingOne">
+                  <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                    Country
+                  </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne">
+                  <div class="accordion-body">
+                    <ul class="list-group scroll">
+                      <!--test search bar -->
+                      <!-- ************************************************************************************-->
+                      <input class="form-control" type="text" id="myInput" placeholder="Search" aria-label="Search"> 
+                      <label><input type="checkbox"> United States</label> 
+                      <label><input type="checkbox"> China</label>
+                      <label><input type="checkbox"> Japan</label>
+                      <label><input type="checkbox"> Germany</label> 
+                      <label><input type="checkbox"> India</label>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- CER/Device -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                  <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                    Medtronic CER/Device
+                  </button>
+                </h2>
+                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo">
+                  <div class="accordion-body">
+                    <ul class="list-group scroll">
+                      <label><input type="checkbox"> Solitaire AB</label>
+                      <label><input type="checkbox"> Pipeline Device</label>
+                      <label><input type="checkbox"> Onyx LES</label>
+                      <label><input type="checkbox"> Axium Detachable Coil</label> 
+                      <label><input type="checkbox"> Test1</label>
+                      <label><input type="checkbox"> Test2</label>
+                      <label><input type="checkbox"> Test3</label>
+                      <label><input type="checkbox"> Test4</label> 
+                      <label><input type="checkbox"> Test5</label>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Disease State -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingThree">
+                  <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                    Disease State
+                  </button>
+                </h2>
+                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree">
+                  <div class="accordion-body">
+                    <ul class="list-group scroll">
+                      <label><input type="checkbox"> IAs</label>
+                      <label><input type="checkbox"> type I endoleaks</label>
+                      <label><input type="checkbox"> type II endoleaks</label>
+                      <label><input type="checkbox"> dAVFs</label> 
+                      <label><input type="checkbox"> tumors</label>
+                      <label><input type="checkbox"> CCFs</label>
+                      <label><input type="checkbox"> bleeding</label>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Adverse Event-->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingFour">
+                  <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                    Adverse Event
+                  </button>
+                </h2>
+                <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour">
+                  <div class="accordion-body">
+                    <ul class="list-group scroll">
+
+                      <label><input type="checkbox"> Access site complication</label>
+                      <label><input type="checkbox"> Death</label>
+                      <label><input type="checkbox"> Rupture</label>
+                      <label><input type="checkbox"> Infarction</label> 
+                      <label><input type="checkbox"> Ischemia</label>
+                      <label><input type="checkbox"> Facial palsy</label> 
+                      <label><input type="checkbox"> Onyx-related complication</label>
+                      </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- Year-->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingFive">
+                  <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                    Year
+                  </button>
+                </h2>
+                <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" >
+                  <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                </div>
+              </div>
+              <!--Patient Inclusion-->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingSix">
+                  <button class="accordion-button collapsed shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                    Patient Inclusion Number
+                  </button>
+                </h2>
+                <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix" >
+                  <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+                </div>
+              </div>
+
+            </div> <!--end accordian class-->
+
+          </div>
+
+          <!-- The remaining 2/3 of page in this row is dedicated to the table>-->
+          <div class="col-sm-9"> 
+            <div class="table-responsive">
+            <table class="table table-dark table-striped">
+              <thead>
+                <tr>
+                  <th>Publication number</th>
+                  <th>Reference name</th>
+                  <th>First author last name</th>
+                  <th>Year</th>
+                  <th>Endnote record number</th>
+                  <th>Title</th>
+                  <th>Publication Type</th>
+                  <th>Disease treated</th>
+                  <th>Total patient number</th>
+                  <th>Number of patients using device</th>
+                  <th>Country</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Brzegowy</td>
+                  <td>Brzegowy</td>
+                  <td>2019</td>
+                  <td>Brzegowy, 2019 #171</td>
+                  <td>Angiographic and clinical results of anterior communicating artery aneurysm endovascular treatment</td>
+                  <td>Retrospective</td>
+                  <td>IAs</td>
+                  <td>109</td>
+                  <td>100</td>
+                  <td>Poland</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Chen_2018</td>
+                  <td>Chen</td>
+                  <td>2018</td>
+                  <td>Chen, 2018 #136</td>
+                  <td>Endovascular management of ruptured distal posterior inferior cerebellar artery aneurysms</td>
+                  <td>Retrospective</td>
+                  <td>IAs</td>
+                  <td>36</td>
+                  <td>36</td>
+                  <td>China</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Chen_2017</td>
+                  <td>Chen</td>
+                  <td>2017</td>
+                  <td>Chen, 2017 #119</td>
+                  <td>Stent-assisted coiling embolization of middle cerebral artery trifurcation wide-necked aneurysms</td>
+                  <td>Retrospective</td>
+                  <td>IAs</td>
+                  <td>57</td>
+                  <td>57</td>
+                  <td>China</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>Clajus</td>
+                  <td>Clajus</td>
+                  <td>2013</td>
+                  <td>Clajus, 2013 #119</td>
+                  <td>Stent-assisted coil embolization of intracranial aneurysms using the SolitaireTM AB Neurovascular Remodeling Device: Initial and midterm follow-up results</td>
+                  <td>Retrospective</td>
+                  <td>IAs</td>
+                  <td>102</td>
+                  <td>102</td>
+                  <td>Germany</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>Cui</td>
+                  <td>Cui</td>
+                  <td>2015</td>
+                  <td>Cui, 2015 #94</td>
+                  <td>Clinical application of Solitaire AB stents in the embolization of intracranial aneurysms.</td>
+                  <td>Retrospective</td>
+                  <td>IAs</td>
+                  <td>65</td>
+                  <td>65</td>
+                  <td>China</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>Ge</td>
+                  <td>Ge</td>
+                  <td>2017</td>
+                  <td>Ge, 2017 #168</td>
+                  <td>Influence of CYP2C19 genetic polymorphisms on clinical outcomes of intracranial aneurysms treated with stent-assisted coiling. </td>
+                  <td>Retrospective</td>
+                  <td>IAs</td>
+                  <td>215</td>
+                  <td>215</td>
+                  <td>China</td>                
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>Gory_2013</td>
+                  <td>Gory</td>
+                  <td>2013</td>
+                  <td>Gory, 2013 #196</td>
+                  <td>Solitaire AB stent-assisted coiling of wide-necked intracranial aneurysms: Short-term results from a prospective, consecutive, European multicentric study.</td>
+                  <td>Prospective</td>
+                  <td>IAs</td>
+                  <td>63</td>
+                  <td>63</td>
+                  <td>France</td>
+                </tr>
+                <tr>
+                  <td>8</td>
+                  <td>Gory_2014</td>
+                  <td>Gory</td>
+                  <td>2014</td>
+                  <td>Gory, 2014 #85</td>
+                  <td>Solitaire AB stent-assisted coiling of wide-necked intracranial aneurysms: Mid-term results from the SOLARE study. </td>
+                  <td>Prospective</td>
+                  <td>IAs</td>
+                  <td>64</td>
+                  <td>64</td>
+                  <td>France</td>
+                </tr>
+                <tr>
+                  <td>9</td>
+                  <td>Heo</td>
+                  <td>Heo</td>
+                  <td>2019</td>
+                  <td>Heo, 2019 #99</td>
+                  <td>Selective Temporary Stent-Assisted Coil Embolization for Intracranial Wide-Necked Small Aneurysms Using Solitaire AB Retrievable Stent. </td>
+                  <td>Retrospective</td>
+                  <td>IAs</td>
+                  <td>156</td>
+                  <td>13</td>
+                  <td>South Korea</td>
+                </tr>                                                
+              </tbody>
+            </table>
+          </div>
+          </div>
+        </div>	
+  		</div>
+
+
+		<!-- Many Bootstrap components requires JavaScript plugins and Popper. This <script> enables this, and must be near end of doc right before the closing </body tag -->
+    	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+  	</body>
+  </html>
